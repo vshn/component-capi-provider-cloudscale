@@ -1,0 +1,5 @@
+parameters:
+  capi_provider_cloudscale:
+    =_metadata:
+      multi_tenant: true
+    namespace: syn-capi-provider-cloudscale
