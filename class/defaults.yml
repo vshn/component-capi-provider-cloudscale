@@ -2,4 +2,18 @@ parameters:
   capi_provider_cloudscale:
     =_metadata:
       multi_tenant: true
-    namespace: syn-capi-provider-cloudscale
+    # The component assumes that this namespace already exists via dependency `component-capi-core`
+    namespace: syn-cluster-api
+
+    images:
+      capi-provider-cloudscale:
+        registry: quay.io
+        image: cloudscalech/cluster-api-cloudscale-controller
+        tag: v1.0.1
+
+    # An object with variables that the generated manifests will be templated with.
+    # They should be specified in the format:
+    # variables:
+    #   my_variable: bar
+    variables:
+      cloudscale_api_token: ""
