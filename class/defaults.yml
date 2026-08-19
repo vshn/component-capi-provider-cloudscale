@@ -11,11 +11,7 @@ parameters:
         image: cloudscalech/cluster-api-cloudscale-controller
         tag: v1.0.1
 
-    kustomize:
-      # The root path of the kustomize manifests. This path is relative to the root of the repository.
-      manifest_path: config/default
-
-    # An array with variables that the generated manifests will be templated with.
+    # An object with variables that the generated manifests will be templated with.
     # They should be specified in the format:
     # variables:
     #   my_variable: bar

@@ -9,8 +9,10 @@ local params = inv.parameters.capi_provider_cloudscale;
 assert std.member(inv.applications, 'capi-core') : 'Application capi-core is not available';
 assert std.length(params.variables.cloudscale_api_token) > 0 : 'capi-provider-cloudscale:variables:cloudscale_api_token must be set';
 
+local manifest_path = 'config/default';
+
 com.Kustomization(
-  'https://github.com/cloudscale-ch/cluster-api-provider-cloudscale/' + params.kustomize.manifest_path,
+  'https://github.com/cloudscale-ch/cluster-api-provider-cloudscale/' + manifest_path,
   params.images['capi-provider-cloudscale'].tag,
   {
     'quay.io/cloudscalech/capcs-staging': {
